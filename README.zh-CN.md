@@ -13,6 +13,17 @@
 
 同时包含使用 Triton 编写自定义 GPU 算子的入门内容。
 
+## 致谢
+
+这些笔记是在研读 **[@jingyaogong](https://github.com/jingyaogong)** 的
+**[MiniMind](https://github.com/jingyaogong/minimind)** 项目过程中写成的——这是一个 64M 参数的中文
+大语言模型，完整实现了从预训练到偏好对齐的训练链路。本仓库中分析的架构选型（GQA 的头数配比、
+SwiGLU 的 intermediate_size 计算、RoPE 的 base 频率、MoE 路由策略）均参照 MiniMind 的设计，
+建议对照原项目一起阅读。
+
+MiniMind 以 Apache License 2.0 开源。本仓库中的代码是我为学习目的独立编写的复现与讲解，
+并非 MiniMind 源码的拷贝或 fork。
+
 ---
 
 ## Transformer 组件
@@ -80,5 +91,4 @@ python triton_kernels/02_softmax.py
 * **文本生成** — 采样参数如何真正改变输出分布
 * **GPU 算子** — Triton 编程模型，以及如何写出数值稳定的 reduction
 
-文中分析的架构选型参照 [MiniMind](https://github.com/jingyaogong/minimind)（一个 64M 参数的中文
-大语言模型）的设计，这些笔记正是在研读该项目的过程中写成的。
+这些笔记所参照的项目见 [致谢](#致谢)。

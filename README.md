@@ -18,6 +18,17 @@ Also included: an introduction to writing custom GPU kernels in Triton.
 > The commentary is written in Chinese. The code, formulas, and structure read the same in any
 > language.
 
+## Credits
+
+These notes were written while studying **[MiniMind](https://github.com/jingyaogong/minimind)** by
+**[@jingyaogong](https://github.com/jingyaogong)** — a 64M-parameter Chinese LLM that implements the
+full training pipeline end to end. The architectural choices analyzed throughout this repository
+(GQA head ratios, SwiGLU intermediate sizing, RoPE base frequency, MoE routing) follow MiniMind's
+design, and the chapters are best read alongside it.
+
+MiniMind is released under the Apache License 2.0. The code in this repository is my own
+reimplementation and commentary written for study; it is not a copy or fork of MiniMind's source.
+
 ---
 
 ## Transformer Components
@@ -88,6 +99,4 @@ python triton_kernels/02_softmax.py
 * **Generation** — how sampling parameters actually change the output distribution
 * **GPU kernels** — the Triton programming model and writing a numerically stable reduction
 
-The architectural choices analyzed throughout follow the design of
-[MiniMind](https://github.com/jingyaogong/minimind), a 64M-parameter Chinese LLM, which these notes
-were written while studying.
+See [Credits](#credits) for the project these notes were written alongside.
